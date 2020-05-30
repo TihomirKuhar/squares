@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>let's play a game</title>
+    <link rel="stylesheet" href="style.css"></link>   
+</head>
+<body id="myPage" >
+    <div class="outerContainer">
+        <div class="innerContainer" id="innerContainer">
+            <h1>Let's play a game</h1>
+            <h3>
+                You will see a grid colored red and blue. After couple of seconds grid will turn white.
+                Click the squares that were previously red. If you click a blue square, you lose.
+                When you find all the red squares you win!
+            </h3>
+            <button
+                class="button mt-20"
+                id="startButton"
+                onClick=handleStart()>START
+            </button>
+            <div id="gridContainer"></div>
+            <button
+                class="button mt-20"
+                id="endButton"
+                onClick=handleEnd()>RESTART
+            </button>
+            <div id="hitMessage">
+                <h2>Red clicked</h2>
+            </div>
+            <div id="alreadyHitMessage">
+                <h2>That one was clicked already</h2>
+            </div>
+            <div id="missMessage">
+                <h2>Blue clicked</h2>
+                <h1>Game Over</h1>
+            </div>
+            <div id="winMessage">
+                <h2>All reds clicked</h2>
+                <h1>You win</h1>
+            </div>            
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
+

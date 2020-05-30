@@ -1,0 +1,94 @@
+html, body {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #1A1A1D;
+  }
+  
+  #root {
+    height: 100vh;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .outerContainer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    align-items: center;
+    background-color: #1A1A1D;
+  }
+  
+  .innerContainer {
+    width: 20%;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+
+  .button {
+      color: #fff !important;
+      text-transform: uppercase;
+      text-decoration: none;
+      background: #4c7aae;
+      padding: 20px;
+      border-radius: 5px;
+      display: inline-block;
+      border: 2px solid #4c7aae;;
+      width: 33%;
+  }
+  .button:hover {
+    background-color: #1A1A1D;
+    color: white;
+  }
+  #endButton{
+      display: none;
+  }
+  .mt-20 {
+    margin-top: 20px;
+  }
+  .grid {  
+    background-color: #4c7aae;
+    padding: 5px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .grid td {
+      cursor:pointer;
+      display: inline-block;
+      
+      border: 1px solid rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      font-size: 30px;
+      text-align: center;
+      width: 33%;
+      color: whitesmoke;
+  }
+  .grid td.clicked {
+      background-color:yellow;
+      font-weight:bold; color:red;
+  }
+  #hitMessage,#winMessage{
+      color: lawngreen;
+  }
+  #alreadyHitMessage{
+      color: lightgreen;
+  }
+  #missMessage{
+      color: rgba(252, 4, 4, 0.863);
+  }
+  #hitMessage,#alreadyHitMessage,#missMessage,#winMessage{
+      display: none;
+  }
+  @media (min-width: 320px) and (max-width: 1024px) {
+    .outerContainer {
+      height: 70vh;
+    }
+    .innerContainer {
+      width: 60%;
+    }
+  }
+  
+
