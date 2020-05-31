@@ -36,7 +36,7 @@ html, body {
       padding: 20px;
       border-radius: 5px;
       display: inline-block;
-      border: 2px solid #4c7aae;;
+      border: 2px solid #4c7aae;
       width: 33%;
   }
   .button:hover {
