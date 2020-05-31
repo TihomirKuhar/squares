@@ -100,5 +100,9 @@ html, body {
       padding: 70px;
     }
   }
-  
+  @media (min-width: 1024px) and (max-width: 1600px) {
+    .button{
+      width: 50%;
+    }
+  }
 
