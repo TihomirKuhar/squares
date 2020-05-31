@@ -70,14 +70,14 @@ function checkForReds(){
     }
     return false;
 }
-//method runs 20 sec after which it changes the background color of all tr elements to white and colors grid white
+//method runs x seconds after which it changes the background color of all tr elements to white and colors grid white
 function handleIntervalSecond(){
     const wait=setInterval(()=>{
         //counter gets +1 every sec
         waits++;
         if(waits>3){
             colorGrid("whitesmoke");
-            setGridToClickable();
+            setGridToClickable(document.getElementById('grid'));
             waits=0;
             clearInterval(wait);
         }
@@ -85,21 +85,16 @@ function handleIntervalSecond(){
 }
 //method colors the grid to the state it was generated at grid create
 function colorGridToSetColor(){
-    //console.log(gridFieldsElements[0].color)
     let gridFieldsElements = document.getElementsByClassName('grid-field');
     for (i = 0; i < gridFieldsElements.length; i++) {
         gridFieldsElements[i].style.backgroundColor = gridFields[i].color;
     }
 }
-//setting color of certain td element to red
-function colorFieldRed(cell){
-    cell.style.backgroundColor="red"
+//setting color of certain td element
+function colorField(cell,color){
+    cell.style.backgroundColor=color;
 }
-//setting color of certain td element to blue
-function colorFieldBlue(cell){
-    cell.style.backgroundColor="blue"
-}
-//coloring the entire grid 
+//setting color of the entire grid
 function colorGrid(color){
     let gridFieldsElements = document.getElementsByClassName('grid-field');
     for (i = 0; i < gridFieldsElements.length; i++) {
@@ -107,13 +102,11 @@ function colorGrid(color){
     }
 }
 //disabling mouse click on grid
-function setGridToNonClickable(){
-    let grid=document.getElementById('grid');
+function setGridToNonClickable(grid){
     grid.style.pointerEvents="none";
 }
 //enabling mouse click on grid
-function setGridToClickable(){
-    let grid=document.getElementById('grid');
+function setGridToClickable(grid){
     grid.style.pointerEvents="visiblePainted";
 }
 function clickableGrid( rows, cols, callback ){
@@ -165,14 +158,14 @@ function clickableGrid( rows, cols, callback ){
                 //setting color 
                 gridField.color="red"
                 //adding gridField to the grid Fields collection
-                colorFieldRed(cell)
+                colorField(cell,"red")
             }
             //else 0
             else {
-                 //setting color
+                //setting color
                 gridField.color="blue"
                 //adding gridField to the grid Fields collection
-                colorFieldBlue(cell);
+                colorField(cell,"blue");
             }
             //pushing object to an array gridFields
             gridFields.push(gridField);
@@ -181,7 +174,7 @@ function clickableGrid( rows, cols, callback ){
         }
     }
     //disabling mouse click on grid
-    setGridToNonClickable();
+    setGridToNonClickable(grid);
     //calling interval that colors fields white after x seconds
     handleIntervalSecond();
     //returning grid
