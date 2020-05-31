@@ -49,6 +49,9 @@ html, body {
   .mt-20 {
     margin-top: 20px;
   }
+  .mt-30 {
+    margin-top: 30px;
+  }
   .grid {  
     background-color: #4c7aae;
     padding: 5px;
@@ -58,13 +61,13 @@ html, body {
   .grid td {
       cursor:pointer;
       display: inline-block;
-      
       border: 1px solid rgba(0, 0, 0, 0.8);
-      padding: 20px;
-      font-size: 30px;
+      padding: 9%;
+      font-size: 22px;
       text-align: center;
       width: 33%;
-      color: whitesmoke;
+      height: 33%;
+      color: transparent;
   }
   .grid td.clicked {
       background-color:yellow;
@@ -88,6 +91,13 @@ html, body {
     }
     .innerContainer {
       width: 60%;
+      font-size: 30px;
+    }
+    .button{
+      font-size: 22px;
+    }
+    .grid td {
+      padding: 70px;
     }
   }
   
